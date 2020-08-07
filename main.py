@@ -1,15 +1,26 @@
 import docxModule
 import scrapeModule
 
-print("Enter an essay topic")
-topic = input("--> ")
-docxModule.title(topic)
-scrapeModule.test()
+file = 'simple.html'
 
-#a = doc.paragraphs[0].text
-#b = doc.paragraphs[1].text
-#print(doc.paragraphs[1].runs[0].text)
-#print(a + b)
+print("Enter an essay title")
+title = input("--> ")
+docxModule.title(title)
 
+print("Is this a Research Essay or an Argumentative Essay")
+topic = input("-->")
+
+print("Enter desired font")
+font = input("-->")
+#docxModule.font(font)
+
+print("Enter font size")
+fontSize = input("-->")
+#docxModule.fontSize(fontSize)
+
+print("Enter desired line-spacing")
+lineSpacing = input("-->")
+
+scrapeModule.scrapeText(file)
 
 
