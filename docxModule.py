@@ -20,7 +20,7 @@ def title(title):
 
 def newPara():
     doc = docx.Document('Document.docx')
-    doc.add_paragraph("")
+    doc.add_paragraph(" \n ")
     doc.save("Document.docx")
     return "2"
 
