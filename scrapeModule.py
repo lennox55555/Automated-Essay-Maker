@@ -11,6 +11,7 @@ def scrapeResearch(sourceAlpha):
         summaryA = articleA.find('div', class_='entry-content').p.text
         docxModule.newPara()
         docxModule.addPara(summaryA)
+        print(sourceAlpha)
 
 
 def scrapeArgue(sourceAlpha, sourceBravo):
