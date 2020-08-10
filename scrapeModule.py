@@ -7,36 +7,31 @@ import requests
 def scrapeResearch(sourceAlpha):
     # sourceA
     soupA = BeautifulSoup(sourceAlpha, 'lxml')
-    for articleA in soupA.find_all('article'):
-        summaryA = articleA.find('div', class_='entry-content').p.text
-        docxModule.newPara()
-        docxModule.addPara(summaryA)
-        print(sourceAlpha)
+    tags = soupA.find_all('p')
+    for txt in tags:
+        innerText = txt.text
+        docxModule.addPara(innerText)
+    print(tags)
+
 
 
 def scrapeArgue(sourceAlpha, sourceBravo):
     # sourceA
     soupA = BeautifulSoup(sourceAlpha, 'lxml')
-    for articleA in soupA.find_all('article'):
-        summaryA = articleA.find('div', class_='entry-content').p.text
-        docxModule.newPara()
-        docxModule.addPara(summaryA)
+    tags = soupA.find_all('p')
+    for txt in tags:
+        innerText = txt.text
+        docxModule.addPara(innerText)
+    print(tags)
     #sourceB
     soupB = BeautifulSoup(sourceBravo, 'lxml')
-    for articleB in soupB.find_all('article'):
-        summaryB = articleB.find('div', class_='entry-content').p.text
-        docxModule.newPara()
-        docxModule.addPara(summaryB)
+    tags1 = soupB.find_all('p')
+    for txt1 in tags1:
+        innerText1 = txt1.text
+        docxModule.addPara(innerText1)
+    print(tags1)
 
 
-def scrapeExpo():
-    print("add expository essay code")
 
-
-def scrapeDescript():
-    print("add descriptive essay code")
-
-def scrapeNarrate():
-    print("add narrative essay code")
 
 
