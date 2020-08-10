@@ -1,38 +1,77 @@
 import requests
 import docxModule
 import scrapeModule
+import searchModule
+import time
 
-sourceAlpha = requests.get('http://coreyms.com').text
-sourceBravo = requests.get('http://coreyms.com').text
+
+#searchModule.postion()
 
 print("Enter an essay title")
 title = input("--> ")
-docxModule.title(title)
 print("")
 
-print("What type of essay are you wanting?\n1 = Research\n2 = Argumentative Essays\n3 = Descriptive\n4 = Narrative\n5 = Expository Essay")
+print("What type of essay are you wanting?\n1 = Research\n2 = Argumentative Essays")
 topic = input("-->")
-if (topic == "1"):
-    scrapeModule.scrapeResearch(sourceAlpha)
-elif (topic == "2"):
-    scrapeModule.scrapeArgue(sourceAlpha, sourceBravo)
-else:
-    print("Unknown topic \nError Code A001\n ")
 
 print("Enter desired font")
 font = input("-->")
 print("")
-#docxModule.font(font)
+
 
 print("Enter font size")
 fontSize = input("-->")
 print("")
-#docxModule.fontSize(fontSize)
+
 
 print("Enter desired line-spacing")
 lineSpacing = input("-->")
 print("")
 
+
+
+
+if (topic == "1"):
+    docxModule.title(title)
+    searchModule.openWiki()
+    time.sleep(2.5)
+    searchModule.searchWiki(title)
+    time.sleep(2.5)
+    searchModule.selectWeb()
+    time.sleep(1.5)
+    url1 = searchModule.selectWeb()
+    sourceAlpha = requests.get(url1).text
+    scrapeModule.scrapeResearch(sourceAlpha)
+
+elif (topic == "2"):
+    print("Please enter the opposing side of the essay")
+    opposing = input("-->")
+    docxModule.title(title)
+    searchModule.openWiki()
+    time.sleep(2.5)
+    searchModule.searchWiki(title)
+    time.sleep(2.5)
+    searchModule.selectWeb()
+    time.sleep(1.5)
+    url1 = searchModule.selectWeb()
+    sourceAlpha = requests.get(url1).text
+    #Source2
+    searchModule.newTab()
+    searchModule.openWiki()
+    time.sleep(2.5)
+    searchModule.searchWiki(opposing)
+    time.sleep(2.5)
+    searchModule.selectWeb()
+    time.sleep(1.5)
+    url2 = searchModule.selectWeb()
+    sourceBravo = requests.get(url2).text
+    print(url1)
+    print(url2)
+    docxModule.title(opposing)
+    scrapeModule.scrapeArgue(sourceAlpha, sourceBravo)
+
+else:
+    print("Unknown topic \nError Code A001\n ")
 
 
 #a = doc.paragraphs[0].text
