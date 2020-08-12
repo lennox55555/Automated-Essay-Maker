@@ -4,9 +4,6 @@ import scrapeModule
 import searchModule
 import time
 
-
-#searchModule.postion()
-
 print("Enter an essay title")
 title = input("--> ")
 print("")
@@ -15,21 +12,15 @@ print("What type of essay are you wanting?\n1 = Research\n2 = Argumentative Essa
 topic = input("-->")
 
 print("Enter desired font")
-font = input("-->")
+font1 = input("-->")
 print("")
-
 
 print("Enter font size")
-fontSize = input("-->")
+fontSize = int(input("-->"))
 print("")
-
-
 print("Enter desired line-spacing")
 lineSpacing = input("-->")
 print("")
-
-
-
 
 if (topic == "1"):
     docxModule.title(title)
@@ -41,7 +32,7 @@ if (topic == "1"):
     time.sleep(1.5)
     url1 = searchModule.selectWeb()
     sourceAlpha = requests.get(url1).text
-    scrapeModule.scrapeResearch(sourceAlpha)
+    scrapeModule.scrapeResearch(sourceAlpha, font1, fontSize)
 
 elif (topic == "2"):
     print("Please enter the opposing side of the essay")
@@ -68,16 +59,11 @@ elif (topic == "2"):
     print(url1)
     print(url2)
     docxModule.title(opposing)
-    scrapeModule.scrapeArgue(sourceAlpha, sourceBravo)
+    scrapeModule.scrapeArgue(sourceAlpha, sourceBravo, font1, fontSize)
 
 else:
     print("Unknown topic \nError Code A001\n ")
 
-
-#a = doc.paragraphs[0].text
-#b = doc.paragraphs[1].text
-#print(doc.paragraphs[1].runs[0].text)
-#print(a + b)
 
 
 
