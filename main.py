@@ -4,6 +4,7 @@ import scrapeModule
 import searchModule
 import time
 
+
 print("Enter an essay title")
 title = input("--> ")
 print("")
@@ -18,8 +19,9 @@ print("")
 print("Enter font size")
 fontSize = int(input("-->"))
 print("")
-print("Enter desired line-spacing")
-lineSpacing = input("-->")
+
+print("Enter desired length of essay")
+length = input("-->")
 print("")
 
 if (topic == "1"):
