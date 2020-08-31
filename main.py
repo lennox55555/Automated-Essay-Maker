@@ -5,6 +5,7 @@ import searchModule
 import time
 
 
+
 print("Enter an essay title")
 title = input("--> ")
 print("")
@@ -21,10 +22,10 @@ fontSize = int(input("-->"))
 print("")
 
 print("Enter desired length of essay")
-length = input("-->")
+length = int(input("-->"))
 print("")
 
-if (topic == "1"):
+if topic == "1":
     docxModule.title(title)
     searchModule.openWiki()
     time.sleep(2.5)
@@ -34,9 +35,9 @@ if (topic == "1"):
     time.sleep(1.5)
     url1 = searchModule.selectWeb()
     sourceAlpha = requests.get(url1).text
-    scrapeModule.scrapeResearch(sourceAlpha, font1, fontSize)
+    scrapeModule.scrapeResearch(sourceAlpha, font1, fontSize, title)
 
-elif (topic == "2"):
+elif topic == "2":
     print("Please enter the opposing side of the essay")
     opposing = input("-->")
     docxModule.title(title)
@@ -65,6 +66,11 @@ elif (topic == "2"):
 
 else:
     print("Unknown topic \nError Code A001\n ")
+
+
+
+
+
 
 
 
