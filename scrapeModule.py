@@ -3,14 +3,19 @@ from bs4 import BeautifulSoup
 import format
 
 
-def scrapeResearch(sourceAlpha, font1, fontSize):
+def scrapeResearch(sourceAlpha, font1, fontSize, title):
     # sourceA
     soupA = BeautifulSoup(sourceAlpha, 'lxml')
     tags = soupA.find_all('p')
     for txt in tags:
-        innerText = txt.text
-        docxModule.addPara(innerText, font1, fontSize)
-    format.test(tags)
+        innerText =  "\"" + txt.text + "\""
+        format.onePage(innerText, font1, fontSize, title)
+        #docxModule.addPara(innerText, font1, fontSize)
+        print(innerText)
+
+
+
+
 
 
 def scrapeArgue(sourceAlpha, sourceBravo, font1, fontSize):
