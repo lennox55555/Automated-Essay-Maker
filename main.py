@@ -6,12 +6,16 @@ import time
 
 
 
-print("Enter an essay title")
+print("This program will write a research essay after several questions are answered \nPlease enter a noun that you would like to have the essay based on (A noun is a person, place, thing)")
+
 title = input("--> ")
 print("")
 
-print("What type of essay are you wanting?\n1 = Research\n2 = Argumentative Essays")
-topic = input("-->")
+print("Would you like the essay to 1.talk greatly upon " + title + "or 2.down upon " + title + " (Please type in a 1 or 2)")
+narrate = int(input("-->"))
+
+print("In what time frame would you like this essay to be discussed in? (Ex: 1910) ")
+year = int(input("-->"))
 
 print("Enter desired font")
 font1 = input("-->")
@@ -25,47 +29,22 @@ print("Enter desired length of essay")
 length = int(input("-->"))
 print("")
 
-if topic == "1":
-    docxModule.title(title)
-    searchModule.openWiki()
-    time.sleep(2.5)
-    searchModule.searchWiki(title)
-    time.sleep(2.5)
-    searchModule.selectWeb()
-    time.sleep(1.5)
-    url1 = searchModule.selectWeb()
-    sourceAlpha = requests.get(url1).text
-    scrapeModule.scrapeResearch(sourceAlpha, font1, fontSize, title)
 
-elif topic == "2":
-    print("Please enter the opposing side of the essay")
-    opposing = input("-->")
-    docxModule.title(title)
-    searchModule.openWiki()
-    time.sleep(2.5)
-    searchModule.searchWiki(title)
-    time.sleep(2.5)
-    searchModule.selectWeb()
-    time.sleep(1.5)
-    url1 = searchModule.selectWeb()
-    sourceAlpha = requests.get(url1).text
-    #Source2
-    searchModule.newTab()
-    searchModule.openWiki()
-    time.sleep(2.5)
-    searchModule.searchWiki(opposing)
-    time.sleep(2.5)
-    searchModule.selectWeb()
-    time.sleep(1.5)
-    url2 = searchModule.selectWeb()
-    sourceBravo = requests.get(url2).text
-    print(url1)
-    print(url2)
-    docxModule.title(opposing)
-    scrapeModule.scrapeArgue(sourceAlpha, sourceBravo, font1, fontSize)
+docxModule.title(title)
+searchModule.openWiki()
+time.sleep(2.5)
+searchModule.searchWiki(title)
+time.sleep(2.5)
+searchModule.selectWeb()
+time.sleep(1.5)
+url1 = searchModule.selectWeb()
+sourceAlpha = requests.get(url1).text
+scrapeModule.scrapeResearch(sourceAlpha, font1, fontSize, title, narrate, length)
 
-else:
-    print("Unknown topic \nError Code A001\n ")
+
+
+
+
 
 
 
