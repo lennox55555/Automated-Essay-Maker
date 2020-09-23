@@ -1,3 +1,4 @@
+
 import docxModule
 
 
@@ -15,33 +16,33 @@ def onePage(text, font1, fontSize, title):
             " supporter is familiar with one of these words, inhumane and irrespective. Although the ideology regaurding "\
             + title + " is frequently changing, it is able to touch every social and economic class of our society. " \
                       "While this may pose a minor problem compared to other significant events currently ongoing in" \
-                      " the world, in the future it may be a different case"
+                      " the world, in the future it may be a different case" + "for example" + text
     docxModule.addPara(essay, font1, fontSize)
     return 1
 
-def twoPage(text, font1, fontSize, title):
+def twoPage():
     return 2
 
-def threePage(text, font1, fontSize, title):
+def threePage():
     return 3
 
-def fourPage(text, font1, fontSize, title):
+def fourPage():
     return 4
 
-def fivePage(text, font1, fontSize, title):
+def fivePage():
     return 5
 
-def sixPage(text, font1, fontSize, title):
+def sixPage():
     return 6
 
-def sevenPage(text, font1, fontSize, title):
+def sevenPage():
     return 7
 
-def eightPage(text, font1, fontSize, title):
+def eightPage():
     return 8
 
-def ninePage(text, font1, fontSize, title):
+def ninePage():
     return 9
 
-def tenPage(text, font1, fontSize, title):
+def tenPage():
     return 10
