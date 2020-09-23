@@ -19,29 +19,29 @@ def onePage(text, font1, fontSize, title):
     docxModule.addPara(essay, font1, fontSize)
     return 1
 
-def twoPage():
+def twoPage(text, font1, fontSize, title):
     return 2
 
-def threePage():
+def threePage(text, font1, fontSize, title):
     return 3
 
-def fourPage():
+def fourPage(text, font1, fontSize, title):
     return 4
 
-def fivePage():
+def fivePage(text, font1, fontSize, title):
     return 5
 
-def sixPage():
+def sixPage(text, font1, fontSize, title):
     return 6
 
-def sevenPage():
+def sevenPage(text, font1, fontSize, title):
     return 7
 
-def eightPage():
+def eightPage(text, font1, fontSize, title):
     return 8
 
-def ninePage():
+def ninePage(text, font1, fontSize, title):
     return 9
 
-def tenPage():
+def tenPage(text, font1, fontSize, title):
     return 10
