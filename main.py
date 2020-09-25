@@ -1,5 +1,4 @@
 import requests
-import docxModule
 import scrapeModule
 import searchModule
 import time
@@ -17,20 +16,12 @@ narrate = int(input("-->"))
 print("In what time frame would you like this essay to be discussed in? (Ex: 1910) ")
 year = int(input("-->"))
 
-print("Enter desired font")
-font1 = input("-->")
-print("")
-
-print("Enter font size")
-fontSize = int(input("-->"))
-print("")
-
 print("Enter desired length of essay")
 length = int(input("-->"))
 print("")
 
 
-docxModule.title(title)
+
 searchModule.openWiki()
 time.sleep(2.5)
 searchModule.searchWiki(title)
@@ -39,7 +30,7 @@ searchModule.selectWeb()
 time.sleep(1.5)
 url1 = searchModule.selectWeb()
 sourceAlpha = requests.get(url1).text
-scrapeModule.scrapeResearch(sourceAlpha, font1, fontSize, title, narrate, length)
+scrapeModule.scrapeResearch(sourceAlpha, title, narrate, length)
 
 
 
