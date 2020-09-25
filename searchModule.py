@@ -22,5 +22,3 @@ def selectWeb():
     url1 = pyperclip.paste()
     return url1
 
-def postion():
-    print(pyautogui.position())
