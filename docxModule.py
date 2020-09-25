@@ -26,24 +26,19 @@ def newPara():
     return "2"
 
 
-def addPara(text, font1, fontSize):
+def addPara(text):
     document = Document('Document.docx')
     paragraph = document.add_paragraph()
     style = document.styles['Normal']
     font = style.font
-    font.name = font1
-    font.size = Pt(fontSize)
+    font.name = "Times New Roman"
+    font.size = Pt(12)
     paragraph.style = document.styles['Normal']
+    paragraph_format = document.styles['Normal'].paragraph_format
+    paragraph_format.line_spacing = 2
     document.add_paragraph(text)
     document.save('Document.docx')
     return "1"
-
-
-def fontSize():
-    doc = docx.Document('Document.docx')
-    font.size = Pt(12)
-    doc.save("Document.docx")
-    return "4"
 
 
 def paraSpace():
@@ -51,8 +46,3 @@ def paraSpace():
     doc.save("Document.docx")
     return "5"
 
-def font(font):
-    doc = docx.Document('Document.docx')
-    font.name = "Times New Roman"
-    doc.save("Document.docx")
-    return "6"
