@@ -1,48 +1,56 @@
-
 import docxModule
 
 
-
-
-def narrateDir(text, font1, fontSize, title, narrate, length):
+def narrateDir(text, title, narrate, length):
     if narrate == 1 & length == 1:
-        onePage(text, font1, fontSize, title)
+        onePage(text, title, length)
 
 
 
-def onePage(text, font1, fontSize, title):
-
-    essay = "In today's society, almost every " + title + \
-            " supporter is familiar with one of these words, inhumane and irrespective. Although the ideology regaurding "\
+def onePage(text, title, length):
+    if "good" in text:
+        while length <= 1:
+            essayIntro = "     In today's society, almost every " + title + \
+            " supporter is familiar with one of these words, adaptable and courageous. Although the ideology regaurding "\
             + title + " is frequently changing, it is able to touch every social and economic class of our society. " \
-                      "While this may pose a minor problem compared to other significant events currently ongoing in" \
-                      " the world, in the future it may be a different case" + "for example" + text
-    docxModule.addPara(essay, font1, fontSize)
-    return 1
 
-def twoPage(text, font1, fontSize, title):
+            docxModule.addPara(essayIntro)
+            essayBody = "     While this may pose a minor problem compared to other significant events currently ongoing in" + \
+            " the world, in the future it may be a different case. " + title + " has exceeded expectations all" \
+            " across the board, for example; " + text + " While this evidence may not constitute " + title + \
+            " in the most viable way, it is certainly an accomplishment of many. "
+
+            docxModule.addPara(essayBody)
+            essayConclusion = "     To conclude " + title + " has impacted this world greatly. At times, the work of " + title + \
+            " may go unseen, undocumented, and unappreciated but it is cruicial that we appraise the work that "\
+            " has been put forth and realize that there is so much that man or machine can do."
+            docxModule.addPara(essayConclusion)
+            length + 1
+            return 2
+
+def twoPage():
     return 2
 
-def threePagetext, font1, fontSize, title):
+def threePage():
     return 3
 
-def fourPage(text, font1, fontSize, title):
+def fourPage():
     return 4
 
-def fivePage(text, font1, fontSize, title):
+def fivePage():
     return 5
 
-def sixPage(text, font1, fontSize, title):
+def sixPage():
     return 6
 
-def sevenPage(text, font1, fontSize, title):
+def sevenPage():
     return 7
 
-def eightPage(text, font1, fontSize, title):
+def eightPage():
     return 8
 
-def ninePage(text, font1, fontSize, title):
+def ninePage():
     return 9
 
-def tenPage(text, font1, fontSize, title):
+def tenPage():
     return 10
