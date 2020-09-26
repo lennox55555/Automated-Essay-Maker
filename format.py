@@ -11,8 +11,8 @@ def onePage(text, title, length):
     if "good" in text:
         while length <= 1:
             essayIntro = "     In today's society, almost every " + title + \
-            " supporter is familiar with one of these words, adaptable and courageous. Although the ideology regaurding "\
-            + title + " is frequently changing, it is able to touch every social and economic class of our society. " \
+            " supporter is familiar with one of these words, adaptable and courageous. Although the ideology regarding "\
+            + title + " is frequently changing, it can touch every social and economic class of our society. " \
 
             docxModule.addPara(essayIntro)
             essayBody = "     While this may pose a minor problem compared to other significant events currently ongoing in" + \
@@ -22,8 +22,8 @@ def onePage(text, title, length):
 
             docxModule.addPara(essayBody)
             essayConclusion = "     To conclude " + title + " has impacted this world greatly. At times, the work of " + title + \
-            " may go unseen, undocumented, and unappreciated but it is cruicial that we appraise the work that "\
-            " has been put forth and realize that there is so much that man or machine can do."
+            " may go unseen, undocumented, and unappreciated we must appraise the work that " + title + \
+            " has put forth and realize that there is so much that man or machine can do."
             docxModule.addPara(essayConclusion)
             length + 1
             return 2
